@@ -25,7 +25,7 @@ crawler:
 
 # 推送模式选择
 report:
-  mode: "current" # 可选: "daily"|"incremental"|"current"
+  mode: "daily" # 可选: "daily"|"incremental"|"current"
   rank_threshold: 9 # 排名高亮阈值
 
 notification:
@@ -42,7 +42,7 @@ notification:
   #   - 只想在工作日白天接收推送（如 09:00-18:00）
   #   - 希望在晚上固定时间收到汇总（如 20:00-22:00）
   push_window:
-    enabled: true  # 是否启用推送时间窗口控制，默认关闭
+    enabled: false  # 是否启用推送时间窗口控制，默认关闭
     # 注意：GitHub Actions 执行时间不稳定，时间范围建议至少留足 2 小时
     # 如果想要精准的定时推送，建议使用 Docker 部署在个人服务器上
     time_range:
@@ -91,7 +91,6 @@ weight:
 
 # name 可以定义任意名称，只具有显示作用，即使项目运行了几天后，忽然改掉 name 也不会影响代码的正常运行
 platforms:
-  # === 综合新闻媒体类 ===
   - id: "toutiao"
     name: "今日头条"
   - id: "baidu"
@@ -112,8 +111,6 @@ platforms:
     name: "靠谱新闻"
   - id: "tencent"
     name: "腾讯新闻"
-
-  # === 财经投资类 ===
   - id: "wallstreetcn-hot"
     name: "华尔街见闻 最热"
   - id: "wallstreetcn-quick"
@@ -130,15 +127,12 @@ platforms:
     name: "金十数据"
   - id: "fastbull"
     name: "快讯通"
-
   - id: "weibo"
     name: "微博"
   - id: "zhihu"
     name: "知乎"
   - id: "bilibili-hot-search"
     name: "bilibili 热搜"
-
-      # === 科技类平台 ===
   - id: "ithome"
     name: "IT之家"
   - id: "juejin"
